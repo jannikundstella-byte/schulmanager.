@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schulmanager</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <section class="login-shell" id="loginView">
+    <div class="login-card">
+      <p class="eyebrow">Firebase Login</p>
+      <h2>Schulmanager MVP</h2>
+      <p class="login-copy">Melde dich mit deinem Firebase-Konto an und arbeite gegen dein laufendes Schulmanager-Backend.</p>
+      <form id="loginForm" class="form-grid">
+        <label>
+          E-Mail
+          <input type="text" name="email" required>
+        </label>
+        <label>
+          Passwort
+          <input type="password" name="password" required>
+        </label>
+        <div class="form-actions">
+          <button class="primary-button" type="submit">Anmelden</button>
+          <button class="secondary-button" type="button" id="showInviteButton">Token eingeben</button>
+        </div>
+      </form>
+      <p class="login-hint" id="loginHint">Verbinde mit dem Firebase-Backend...</p>
+      <p class="login-error" id="loginError"></p>
+      <div class="demo-box hidden" id="inviteRegisterBox">
+        <strong>Mit Einladung registrieren</strong>
+        <form id="inviteRegisterForm" class="form-grid">
+          <label>
+            Einladungs-Token
+            <input type="text" name="inviteToken" required>
+          </label>
+          <label>
+            Vorname
+            <input type="text" name="firstName" required>
+          </label>
+          <label>
+            Nachname
+            <input type="text" name="lastName" required>
+          </label>
+          <label>
+            Eigene E-Mail
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Eigenes Passwort
+            <input type="password" name="password" required>
+          </label>
+          <div class="form-actions">
+            <button class="primary-button" type="submit">Registrieren</button>
+          </div>
+        </form>
+        <p class="login-hint" id="inviteRegisterMessage"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="app-shell hidden" id="appShell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">SM</span>
+        <div>
+          <p class="brand-kicker">Schulportal</p>
+          <h1>Schulmanager</h1>
+        </div>
+      </div>
+      <div class="topbar-meta">
+        <span class="session-status" id="sessionStatus"></span>
+        <button class="pill-button" id="logoutButton" type="button">Logout</button>
+        <div class="avatar" id="avatar">SM</div>
+      </div>
+    </header>
+
+    <section class="module-switcher">
+      <label class="module-switcher__label" for="moduleNav">Funktionen</label>
+      <select class="module-switcher__select" id="moduleNav"></select>
+    </section>
+
+    <main class="page">
+      <section class="hero-card">
+        <div>
+          <p class="eyebrow">Schueler-Dashboard</p>
+          <h2 id="heroTitle">Herzlich willkommen</h2>
+          <p id="heroDescription">Alle wichtigen Schulinfos an einem Ort.</p>
+        </div>
+        <div class="hero-badges">
+          <div class="badge-box">
+            <span id="todayDate"></span>
+            <strong>Heute</strong>
+          </div>
+          <div class="badge-box">
+            <span id="openTasksCount">0</span>
+            <strong>Offene Eintraege</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="dashboardView" class="dashboard-grid"></section>
+      <section id="moduleView" class="module-view hidden"></section>
+    </main>
+  </div>
+
+  <template id="cardTemplate">
+    <article class="panel-card">
+      <div class="panel-card__header">
+        <h3></h3>
+        <span class="panel-icon"></span>
+      </div>
+      <div class="panel-card__body"></div>
+    </article>
+  </template>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

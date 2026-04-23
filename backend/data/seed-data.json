@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "u_admin_1",
+      "email": "admin@example.com",
+      "role": "admin",
+      "firstName": "Alex",
+      "lastName": "Admin"
+    }
+  ],
+  "classes": [
+    {
+      "id": "class_8a",
+      "name": "8A",
+      "gradeLevel": 8,
+      "teacherId": "u_admin_1"
+    }
+  ],
+  "students": [
+    
+  ],
+  "attendance": [
+    
+  ],
+  "classbookEntries": [
+    {
+      "id": "cb_1",
+      "classId": "class_8a",
+      "subject": "Informatik",
+      "date": "2026-04-21",
+      "topic": "HTML basics",
+      "homework": "Create a start page",
+      "teacherId": "u_admin_1"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "lesson_1",
+      "day": "Montag",
+      "lessonSlot": "1",
+      "className": "8A",
+      "subject": "Mathematik",
+      "room": "A103",
+      "teacherName": "Admin",
+      "createdBy": "u_admin_1"
+    },
+    {
+      "id": "lesson_2",
+      "day": "Dienstag",
+      "lessonSlot": "2",
+      "className": "8A",
+      "subject": "Informatik",
+      "room": "C201",
+      "teacherName": "Admin",
+      "createdBy": "u_admin_1"
+    }
+  ],
+  "invitations": []
+}
